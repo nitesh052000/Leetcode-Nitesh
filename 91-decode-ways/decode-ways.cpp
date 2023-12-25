@@ -5,7 +5,7 @@ public:
     int  solve(int idx , string s,vector<int>&dp){
        
        if(idx>=s.length()){
-           return 1;
+           return dp[idx]=1;
        }
 
         if(dp[idx]!=-1)
