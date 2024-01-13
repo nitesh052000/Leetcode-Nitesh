@@ -2,29 +2,22 @@ class Solution {
 public:
     int minSteps(string s, string t) {
         
-        map<char,int>mp1;
-         map<int,int>mp2;
-        int n = s.length();
-        int cnt = 0;
+       vector<int>arr1(26,0);
+       vector<int>arr2(26,0);
+       int cnt = 0;
 
-        for(int i=0;i<n;i++){
-            mp1[t[i]]++;
-        }
-        for(int i=0;i<n;i++){
-            mp2[s[i]]++;
-        }
-     
-        for(auto it:mp2){
-            int ele = it.first;
-            int freq = it.second;
+       for(int i=0;i<s.length();i++){
+           arr1[s[i]-'a']++;
+       }
+       for(int i=0;i<s.length();i++){
+           arr1[t[i]-'a']--;
+       }
 
-            if(freq>mp1[ele]){
-                cnt = cnt + abs(freq-mp1[ele]);
-            }
-            else{
-                continue;
-            }
-        }
-        return cnt;
+       for(int i=0;i<arr1.size();i++){
+           if(arr1[i]>0){
+               cnt = cnt  + arr1[i];
+           }
+       }
+       return cnt;
     }
 };
