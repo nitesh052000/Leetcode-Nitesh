@@ -4,15 +4,15 @@ public:
     stack<int>s2;
 
     MyQueue() {
-        
+
     }
     
     void push(int x) {
-        s1.push(x);
+         s1.push(x);
     }
     
     int pop() {
-        while(!s1.empty()){
+         while(!s1.empty()){
             s2.push(s1.top());
             s1.pop();
         }
@@ -23,12 +23,10 @@ public:
              s2.pop();
         }
         return ele;
-
     }
     
     int peek() {
-
-        while(!s1.empty()){
+          while(!s1.empty()){
             s2.push(s1.top());
             s1.pop();
         }
@@ -42,7 +40,7 @@ public:
     }
     
     bool empty() {
-        if(s1.size()==0)
+         if(s1.size()==0)
         return true;
 
         return false;
