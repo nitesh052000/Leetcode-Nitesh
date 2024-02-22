@@ -12,14 +12,11 @@ public:
               if(nums[j]==0)
               cnt++;
 
-              if(cnt<k){
+              if(cnt<=k){
                   maxi = max(maxi,j-i+1);
                   j++;
               }
-              else if(cnt==k){
-                  maxi = max(maxi,j-i+1);
-                  j++;
-              }
+            
               else{
                   if(nums[i]==0)
                   {
