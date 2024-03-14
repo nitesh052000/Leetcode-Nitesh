@@ -12,9 +12,9 @@ public:
 
           pre = pre + nums[i];
           int r = pre-goal;
-          if(mp.find(r)!=mp.end()){
+          
              cnt = cnt + mp[r];
-          }
+          
           mp[pre]+=1;  
       }
       return cnt;
