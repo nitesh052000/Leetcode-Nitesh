@@ -10,21 +10,36 @@
  * };
  */
 class Solution {
-public:
+public: 
+  
+    bool solve(TreeNode* root1 , TreeNode* root2){
+       
+       if(root1==NULL && root2==NULL)
+       return true;
+
+       if(root1==NULL && root2!=NULL || root1!=NULL && root2==NULL)
+       return false;
+
+       
+
+       bool left = solve(root1->left,root2->left);
+
+       bool right = solve(root1->right,root2->right);
+
+        bool ans = root1->val==root2->val?true:false;
+
+
+        if(left && right && ans)
+        return true; 
+
+       else
+       return false;
+
+    }
+
+
     bool isSameTree(TreeNode* p, TreeNode* q) {
-          // If both nodes are NULL, they are identical
-        if (p == NULL && q == NULL) {
-            return true;
-        }
-        // If only one of the nodes is NULL, they are not identical
-        if (p == NULL || q == NULL) {
-            return false;
-        }
-        // Check if values are equal and recursively check left and right subtrees
-        if (p->val == q->val) {
-            return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
-        }
-        // Values are not equal, they are not identical
-        return false;
+           
+           return solve(p,q);
     }
 };
