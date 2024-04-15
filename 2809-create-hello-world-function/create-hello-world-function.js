@@ -4,8 +4,8 @@
 var createHelloWorld = function() {
     
     return function(...args) {
-         const ans = "Hello World";
-         return ans;
+        
+         return "Hello World";
     }
 };
 
