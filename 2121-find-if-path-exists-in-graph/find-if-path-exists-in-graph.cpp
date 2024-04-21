@@ -23,15 +23,18 @@ public:
             int node = pq.front();
             pq.pop();
 
-            vis[node] =1;
+            
 
             if(node==destination){
                 return true;
             }
 
             for(auto it:adj[node]){
-                if(vis[it]==0)
-                pq.push(it);
+                if(!vis[it])
+                {
+                    vis[it]=1;
+                    pq.push(it);
+                }
             }
 
            }
