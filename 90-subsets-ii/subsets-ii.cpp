@@ -7,7 +7,7 @@ public:
 
       for(int i=idx;i<nums.size();i++){
 
-        if(i!=idx && nums[i-1]==nums[i])
+        if(i>idx && nums[i-1]==nums[i])
         continue;
         ans.push_back(nums[i]);
         solve(i+1,nums,ans,niks);
