@@ -17,7 +17,7 @@ public:
 
           int carry = 0;
 
-          while(l1!=NULL || l2!=NULL){
+          while(l1!=NULL || l2!=NULL || carry){
                  int sum = 0;
                 if(l1!=NULL){
                   sum = sum + l1->val;
@@ -45,10 +45,10 @@ public:
 
           }
 
-          if(carry==1){
-             ListNode* root = new ListNode(1);
-             temp->next = root;
-          }
+        //   if(carry==1){
+        //      ListNode* root = new ListNode(1);
+        //      temp->next = root;
+        //   }
 
          return dummy->next;
     }
