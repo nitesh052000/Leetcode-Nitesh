@@ -7,16 +7,9 @@ public:
             return true;
         }
 
-        if(idx>=n){
-
-            if(totalsum==0)
-            return true;
-            else
-            return false;
-        }
-
-        if(totalsum<0)
+        if (idx >= n || totalsum < 0) {
         return false;
+    }
 
         if(dp[idx][totalsum]!=-1)
         return dp[idx][totalsum];
