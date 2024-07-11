@@ -3,7 +3,7 @@ public:
     string reverseParentheses(string s) {
           
           
-           priority_queue<int>pq;
+           stack<int>pq;
 
           for(int i=0;i<s.length();i++){
            
